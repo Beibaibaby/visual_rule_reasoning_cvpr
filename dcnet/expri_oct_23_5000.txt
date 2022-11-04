@@ -1,0 +1,246 @@
+Training Epoch: 1/100, Loss: 0.344, Accuracy: 29.680 
+Validation Epoch: 1/100, Loss: 0.360, Accuracy: 27.307 
+Testing Epoch: 1/100, Accuracy: 27.814 
+Training Epoch: 1/100, Loss: 0.344, Accuracy: 29.620 
+Validation Epoch: 1/100, Loss: 0.349, Accuracy: 27.171 
+Testing Epoch: 1/100, Accuracy: 27.379 
+Training Epoch: 2/100, Loss: 0.300, Accuracy: 40.880 
+Validation Epoch: 2/100, Loss: 0.360, Accuracy: 27.943 
+Testing Epoch: 2/100, Accuracy: 28.193 
+Training Epoch: 3/100, Loss: 0.278, Accuracy: 47.560 
+Validation Epoch: 3/100, Loss: 0.367, Accuracy: 29.071 
+Testing Epoch: 3/100, Accuracy: 29.679 
+Training Epoch: 4/100, Loss: 0.263, Accuracy: 50.880 
+Validation Epoch: 4/100, Loss: 0.374, Accuracy: 29.586 
+Testing Epoch: 4/100, Accuracy: 30.300 
+Training Epoch: 5/100, Loss: 0.249, Accuracy: 55.280 
+Validation Epoch: 5/100, Loss: 0.357, Accuracy: 29.986 
+Testing Epoch: 5/100, Accuracy: 29.979 
+Training Epoch: 6/100, Loss: 0.235, Accuracy: 58.020 
+Validation Epoch: 6/100, Loss: 0.358, Accuracy: 30.164 
+Testing Epoch: 6/100, Accuracy: 30.500 
+Training Epoch: 7/100, Loss: 0.221, Accuracy: 61.600 
+Validation Epoch: 7/100, Loss: 0.426, Accuracy: 29.107 
+Testing Epoch: 7/100, Accuracy: 29.250 
+Training Epoch: 8/100, Loss: 0.209, Accuracy: 65.640 
+Validation Epoch: 8/100, Loss: 0.428, Accuracy: 29.136 
+Testing Epoch: 8/100, Accuracy: 29.071 
+Training Epoch: 9/100, Loss: 0.195, Accuracy: 68.140 
+Validation Epoch: 9/100, Loss: 0.483, Accuracy: 29.786 
+Testing Epoch: 9/100, Accuracy: 29.700 
+Training Epoch: 10/100, Loss: 0.181, Accuracy: 73.420 
+Validation Epoch: 10/100, Loss: 0.461, Accuracy: 28.636 
+Testing Epoch: 10/100, Accuracy: 29.000 
+Training Epoch: 11/100, Loss: 0.163, Accuracy: 77.020 
+Validation Epoch: 11/100, Loss: 0.522, Accuracy: 28.486 
+Testing Epoch: 11/100, Accuracy: 28.407 
+Training Epoch: 12/100, Loss: 0.149, Accuracy: 80.400 
+Validation Epoch: 12/100, Loss: 0.593, Accuracy: 29.600 
+Testing Epoch: 12/100, Accuracy: 29.664 
+Training Epoch: 13/100, Loss: 0.134, Accuracy: 83.480 
+Validation Epoch: 13/100, Loss: 0.635, Accuracy: 27.857 
+Testing Epoch: 13/100, Accuracy: 27.957 
+Training Epoch: 14/100, Loss: 0.120, Accuracy: 87.440 
+Validation Epoch: 14/100, Loss: 0.683, Accuracy: 28.364 
+Testing Epoch: 14/100, Accuracy: 28.364 
+Training Epoch: 15/100, Loss: 0.107, Accuracy: 89.860 
+Validation Epoch: 15/100, Loss: 0.709, Accuracy: 28.100 
+Testing Epoch: 15/100, Accuracy: 28.221 
+Training Epoch: 16/100, Loss: 0.091, Accuracy: 92.560 
+Validation Epoch: 16/100, Loss: 0.892, Accuracy: 26.993 
+Testing Epoch: 16/100, Accuracy: 27.129 
+Training Epoch: 17/100, Loss: 0.083, Accuracy: 94.200 
+Validation Epoch: 17/100, Loss: 0.878, Accuracy: 27.457 
+Testing Epoch: 17/100, Accuracy: 27.500 
+Training Epoch: 18/100, Loss: 0.072, Accuracy: 95.820 
+Validation Epoch: 18/100, Loss: 0.868, Accuracy: 27.636 
+Testing Epoch: 18/100, Accuracy: 28.043 
+Training Epoch: 19/100, Loss: 0.065, Accuracy: 96.640 
+Validation Epoch: 19/100, Loss: 1.015, Accuracy: 27.007 
+Testing Epoch: 19/100, Accuracy: 27.336 
+Training Epoch: 20/100, Loss: 0.059, Accuracy: 97.000 
+Validation Epoch: 20/100, Loss: 0.885, Accuracy: 26.714 
+Testing Epoch: 20/100, Accuracy: 27.229 
+Training Epoch: 21/100, Loss: 0.055, Accuracy: 97.600 
+Validation Epoch: 21/100, Loss: 1.232, Accuracy: 25.286 
+Testing Epoch: 21/100, Accuracy: 26.250 
+Training Epoch: 22/100, Loss: 0.048, Accuracy: 98.020 
+Validation Epoch: 22/100, Loss: 1.028, Accuracy: 26.179 
+Testing Epoch: 22/100, Accuracy: 26.593 
+Training Epoch: 23/100, Loss: 0.044, Accuracy: 98.440 
+Validation Epoch: 23/100, Loss: 1.118, Accuracy: 26.386 
+Testing Epoch: 23/100, Accuracy: 26.379 
+Training Epoch: 24/100, Loss: 0.043, Accuracy: 98.680 
+Validation Epoch: 24/100, Loss: 0.997, Accuracy: 25.607 
+Testing Epoch: 24/100, Accuracy: 26.164 
+Training Epoch: 25/100, Loss: 0.039, Accuracy: 98.660 
+Validation Epoch: 25/100, Loss: 1.146, Accuracy: 26.757 
+Testing Epoch: 25/100, Accuracy: 27.050 
+Training Epoch: 26/100, Loss: 0.035, Accuracy: 98.860 
+Validation Epoch: 26/100, Loss: 1.222, Accuracy: 25.914 
+Testing Epoch: 26/100, Accuracy: 26.293 
+Training Epoch: 27/100, Loss: 0.033, Accuracy: 99.140 
+Validation Epoch: 27/100, Loss: 1.086, Accuracy: 26.714 
+Testing Epoch: 27/100, Accuracy: 27.300 
+Training Epoch: 28/100, Loss: 0.033, Accuracy: 99.220 
+Validation Epoch: 28/100, Loss: 1.172, Accuracy: 27.571 
+Testing Epoch: 28/100, Accuracy: 28.014 
+Training Epoch: 29/100, Loss: 0.030, Accuracy: 99.300 
+Validation Epoch: 29/100, Loss: 1.086, Accuracy: 26.171 
+Testing Epoch: 29/100, Accuracy: 26.829 
+Training Epoch: 30/100, Loss: 0.029, Accuracy: 99.100 
+Validation Epoch: 30/100, Loss: 1.251, Accuracy: 26.386 
+Testing Epoch: 30/100, Accuracy: 26.857 
+Training Epoch: 31/100, Loss: 0.031, Accuracy: 99.160 
+Validation Epoch: 31/100, Loss: 1.278, Accuracy: 25.843 
+Testing Epoch: 31/100, Accuracy: 26.179 
+Training Epoch: 32/100, Loss: 0.026, Accuracy: 99.360 
+Validation Epoch: 32/100, Loss: 1.216, Accuracy: 26.729 
+Testing Epoch: 32/100, Accuracy: 27.200 
+Training Epoch: 33/100, Loss: 0.026, Accuracy: 99.380 
+Validation Epoch: 33/100, Loss: 1.231, Accuracy: 26.414 
+Testing Epoch: 33/100, Accuracy: 27.007 
+Training Epoch: 34/100, Loss: 0.024, Accuracy: 99.480 
+Validation Epoch: 34/100, Loss: 1.161, Accuracy: 25.557 
+Testing Epoch: 34/100, Accuracy: 26.043 
+Training Epoch: 35/100, Loss: 0.025, Accuracy: 99.620 
+Validation Epoch: 35/100, Loss: 1.368, Accuracy: 25.443 
+Testing Epoch: 35/100, Accuracy: 25.464 
+Training Epoch: 36/100, Loss: 0.025, Accuracy: 99.540 
+Validation Epoch: 36/100, Loss: 1.230, Accuracy: 25.664 
+Testing Epoch: 36/100, Accuracy: 26.157 
+Training Epoch: 37/100, Loss: 0.022, Accuracy: 99.500 
+Validation Epoch: 37/100, Loss: 1.099, Accuracy: 25.071 
+Testing Epoch: 37/100, Accuracy: 25.014 
+Training Epoch: 38/100, Loss: 0.022, Accuracy: 99.680 
+Validation Epoch: 38/100, Loss: 1.191, Accuracy: 26.057 
+Testing Epoch: 38/100, Accuracy: 26.436 
+Training Epoch: 39/100, Loss: 0.020, Accuracy: 99.640 
+Validation Epoch: 39/100, Loss: 1.293, Accuracy: 26.557 
+Testing Epoch: 39/100, Accuracy: 26.750 
+Training Epoch: 40/100, Loss: 0.019, Accuracy: 99.760 
+Validation Epoch: 40/100, Loss: 1.547, Accuracy: 26.164 
+Testing Epoch: 40/100, Accuracy: 26.407 
+Training Epoch: 41/100, Loss: 0.022, Accuracy: 99.560 
+Validation Epoch: 41/100, Loss: 1.275, Accuracy: 25.943 
+Testing Epoch: 41/100, Accuracy: 25.364 
+Training Epoch: 42/100, Loss: 0.019, Accuracy: 99.660 
+Validation Epoch: 42/100, Loss: 1.234, Accuracy: 26.643 
+Testing Epoch: 42/100, Accuracy: 26.607 
+Training Epoch: 43/100, Loss: 0.016, Accuracy: 99.900 
+Validation Epoch: 43/100, Loss: 1.604, Accuracy: 26.743 
+Testing Epoch: 43/100, Accuracy: 26.714 
+Training Epoch: 44/100, Loss: 0.018, Accuracy: 99.800 
+Validation Epoch: 44/100, Loss: 1.321, Accuracy: 25.279 
+Testing Epoch: 44/100, Accuracy: 25.550 
+Training Epoch: 45/100, Loss: 0.020, Accuracy: 99.480 
+Validation Epoch: 45/100, Loss: 1.369, Accuracy: 25.993 
+Testing Epoch: 45/100, Accuracy: 25.907 
+Training Epoch: 46/100, Loss: 0.017, Accuracy: 99.680 
+Validation Epoch: 46/100, Loss: 1.281, Accuracy: 27.514 
+Testing Epoch: 46/100, Accuracy: 27.607 
+Training Epoch: 47/100, Loss: 0.016, Accuracy: 99.820 
+Validation Epoch: 47/100, Loss: 1.363, Accuracy: 25.564 
+Testing Epoch: 47/100, Accuracy: 25.007 
+Training Epoch: 48/100, Loss: 0.018, Accuracy: 99.700 
+Validation Epoch: 48/100, Loss: 1.080, Accuracy: 26.414 
+Testing Epoch: 48/100, Accuracy: 26.679 
+Training Epoch: 49/100, Loss: 0.016, Accuracy: 99.720 
+Validation Epoch: 49/100, Loss: 1.254, Accuracy: 26.821 
+Testing Epoch: 49/100, Accuracy: 26.500 
+Training Epoch: 50/100, Loss: 0.014, Accuracy: 99.780 
+Validation Epoch: 50/100, Loss: 1.525, Accuracy: 25.979 
+Testing Epoch: 50/100, Accuracy: 25.993 
+Training Epoch: 51/100, Loss: 0.016, Accuracy: 99.700 
+Validation Epoch: 51/100, Loss: 1.339, Accuracy: 26.214 
+Testing Epoch: 51/100, Accuracy: 26.136 
+Training Epoch: 52/100, Loss: 0.017, Accuracy: 99.680 
+Validation Epoch: 52/100, Loss: 1.494, Accuracy: 24.886 
+Testing Epoch: 52/100, Accuracy: 24.686 
+Training Epoch: 53/100, Loss: 0.016, Accuracy: 99.760 
+Validation Epoch: 53/100, Loss: 1.256, Accuracy: 25.971 
+Testing Epoch: 53/100, Accuracy: 26.107 
+Training Epoch: 54/100, Loss: 0.014, Accuracy: 99.760 
+Validation Epoch: 54/100, Loss: 1.313, Accuracy: 25.600 
+Testing Epoch: 54/100, Accuracy: 25.243 
+Training Epoch: 55/100, Loss: 0.014, Accuracy: 99.880 
+Validation Epoch: 55/100, Loss: 1.299, Accuracy: 24.729 
+Testing Epoch: 55/100, Accuracy: 24.686 
+Training Epoch: 56/100, Loss: 0.014, Accuracy: 99.740 
+Validation Epoch: 56/100, Loss: 1.502, Accuracy: 25.957 
+Testing Epoch: 56/100, Accuracy: 25.864 
+Training Epoch: 57/100, Loss: 0.014, Accuracy: 99.800 
+Validation Epoch: 57/100, Loss: 1.435, Accuracy: 25.786 
+Testing Epoch: 57/100, Accuracy: 25.829 
+Training Epoch: 58/100, Loss: 0.012, Accuracy: 99.820 
+Validation Epoch: 58/100, Loss: 1.519, Accuracy: 26.179 
+Testing Epoch: 58/100, Accuracy: 26.050 
+Training Epoch: 59/100, Loss: 0.013, Accuracy: 99.760 
+Validation Epoch: 59/100, Loss: 1.121, Accuracy: 25.464 
+Testing Epoch: 59/100, Accuracy: 25.500 
+Training Epoch: 60/100, Loss: 0.013, Accuracy: 99.780 
+Validation Epoch: 60/100, Loss: 1.679, Accuracy: 26.479 
+Testing Epoch: 60/100, Accuracy: 26.721 
+Training Epoch: 61/100, Loss: 0.013, Accuracy: 99.780 
+Validation Epoch: 61/100, Loss: 1.576, Accuracy: 25.786 
+Testing Epoch: 61/100, Accuracy: 26.236 
+Training Epoch: 62/100, Loss: 0.014, Accuracy: 99.680 
+Validation Epoch: 62/100, Loss: 1.621, Accuracy: 26.871 
+Testing Epoch: 62/100, Accuracy: 27.000 
+Training Epoch: 63/100, Loss: 0.012, Accuracy: 99.920 
+Validation Epoch: 63/100, Loss: 1.342, Accuracy: 25.407 
+Testing Epoch: 63/100, Accuracy: 25.771 
+Training Epoch: 64/100, Loss: 0.009, Accuracy: 99.860 
+Validation Epoch: 64/100, Loss: 1.519, Accuracy: 25.121 
+Testing Epoch: 64/100, Accuracy: 25.386 
+Training Epoch: 65/100, Loss: 0.010, Accuracy: 99.860 
+Validation Epoch: 65/100, Loss: 1.527, Accuracy: 25.943 
+Testing Epoch: 65/100, Accuracy: 25.893 
+Training Epoch: 66/100, Loss: 0.013, Accuracy: 99.840 
+Validation Epoch: 66/100, Loss: 1.243, Accuracy: 26.407 
+Testing Epoch: 66/100, Accuracy: 26.250 
+Training Epoch: 67/100, Loss: 0.011, Accuracy: 99.800 
+Validation Epoch: 67/100, Loss: 1.451, Accuracy: 25.707 
+Testing Epoch: 67/100, Accuracy: 25.557 
+Training Epoch: 68/100, Loss: 0.012, Accuracy: 99.720 
+Validation Epoch: 68/100, Loss: 1.383, Accuracy: 26.486 
+Testing Epoch: 68/100, Accuracy: 26.021 
+Training Epoch: 69/100, Loss: 0.011, Accuracy: 99.840 
+Validation Epoch: 69/100, Loss: 1.400, Accuracy: 25.914 
+Testing Epoch: 69/100, Accuracy: 25.486 
+Training Epoch: 70/100, Loss: 0.012, Accuracy: 99.860 
+Validation Epoch: 70/100, Loss: 1.762, Accuracy: 25.864 
+Testing Epoch: 70/100, Accuracy: 25.671 
+Training Epoch: 71/100, Loss: 0.011, Accuracy: 99.860 
+Validation Epoch: 71/100, Loss: 1.224, Accuracy: 25.993 
+Testing Epoch: 71/100, Accuracy: 26.100 
+Training Epoch: 72/100, Loss: 0.009, Accuracy: 99.880 
+Validation Epoch: 72/100, Loss: 1.669, Accuracy: 26.043 
+Testing Epoch: 72/100, Accuracy: 26.050 
+Training Epoch: 73/100, Loss: 0.011, Accuracy: 99.740 
+Validation Epoch: 73/100, Loss: 1.642, Accuracy: 26.821 
+Testing Epoch: 73/100, Accuracy: 26.114 
+Training Epoch: 74/100, Loss: 0.010, Accuracy: 99.900 
+Validation Epoch: 74/100, Loss: 1.469, Accuracy: 26.300 
+Testing Epoch: 74/100, Accuracy: 26.679 
+Training Epoch: 75/100, Loss: 0.009, Accuracy: 99.920 
+Validation Epoch: 75/100, Loss: 1.524, Accuracy: 26.557 
+Testing Epoch: 75/100, Accuracy: 26.593 
+Training Epoch: 76/100, Loss: 0.008, Accuracy: 99.860 
+Validation Epoch: 76/100, Loss: 1.616, Accuracy: 25.657 
+Testing Epoch: 76/100, Accuracy: 25.471 
+Training Epoch: 77/100, Loss: 0.011, Accuracy: 99.800 
+Validation Epoch: 77/100, Loss: 1.236, Accuracy: 25.829 
+Testing Epoch: 77/100, Accuracy: 25.471 
+Training Epoch: 78/100, Loss: 0.009, Accuracy: 99.820 
+Validation Epoch: 78/100, Loss: 1.710, Accuracy: 26.929 
+Testing Epoch: 78/100, Accuracy: 26.850 
+Training Epoch: 79/100, Loss: 0.009, Accuracy: 99.840 
+Validation Epoch: 79/100, Loss: 1.154, Accuracy: 26.643 
+Testing Epoch: 79/100, Accuracy: 26.221 
+Training Epoch: 80/100, Loss: 0.012, Accuracy: 99.700 
+Validation Epoch: 80/100, Loss: 1.348, Accuracy: 26.357 
+Testing Epoch: 80/100, Accuracy: 26.493 
+Training Epoch: 81/100, Loss: 0.009, Accuracy: 99.820 
+Validation Epoch: 81/100, Loss: 1.328, Accuracy: 26.250 
+Testing Epoch: 81/100, Accuracy: 25.764 

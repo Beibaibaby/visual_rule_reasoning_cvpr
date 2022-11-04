@@ -1,0 +1,57 @@
+Training Epoch: 1/30, Loss: 0.338, Accuracy: 30.275 
+Validation Epoch: 1/30, Loss: 0.327, Accuracy: 36.479 
+Testing Epoch: 1/30, Accuracy: 35.664 
+Training Epoch: 1/30, Loss: 0.338, Accuracy: 30.615 
+Validation Epoch: 1/30, Loss: 0.328, Accuracy: 36.029 
+Testing Epoch: 1/30, Accuracy: 36.043 
+Training Epoch: 2/30, Loss: 0.298, Accuracy: 41.735 
+Validation Epoch: 2/30, Loss: 0.308, Accuracy: 41.100 
+Testing Epoch: 2/30, Accuracy: 41.186 
+Training Epoch: 3/30, Loss: 0.273, Accuracy: 47.860 
+Validation Epoch: 3/30, Loss: 0.308, Accuracy: 40.500 
+Testing Epoch: 3/30, Accuracy: 41.107 
+Training Epoch: 4/30, Loss: 0.256, Accuracy: 51.895 
+Validation Epoch: 4/30, Loss: 0.312, Accuracy: 41.057 
+Testing Epoch: 4/30, Accuracy: 41.514 
+Training Epoch: 1/30, Loss: 0.338, Accuracy: 30.305 
+Training Epoch: 5/30, Loss: 0.240, Accuracy: 56.605 
+Validation Epoch: 1/30, Loss: 0.326, Accuracy: 34.864 
+Validation Epoch: 5/30, Loss: 0.308, Accuracy: 42.936 
+Testing Epoch: 1/30, Accuracy: 34.957 
+Testing Epoch: 5/30, Accuracy: 42.493 
+Training Epoch: 1/30, Loss: 0.337, Accuracy: 29.990 
+Validation Epoch: 1/30, Loss: 0.327, Accuracy: 33.293 
+Testing Epoch: 1/30, Accuracy: 33.800 
+Training Epoch: 6/30, Loss: 0.224, Accuracy: 60.390 
+Training Epoch: 2/30, Loss: 0.297, Accuracy: 42.200 
+Validation Epoch: 6/30, Loss: 0.310, Accuracy: 43.807 
+Validation Epoch: 2/30, Loss: 0.324, Accuracy: 37.936 
+Testing Epoch: 6/30, Accuracy: 43.943 
+Testing Epoch: 2/30, Accuracy: 37.407 
+Training Epoch: 2/30, Loss: 0.297, Accuracy: 41.720 
+Validation Epoch: 2/30, Loss: 0.316, Accuracy: 37.779 
+Testing Epoch: 2/30, Accuracy: 38.350 
+Training Epoch: 3/30, Loss: 0.275, Accuracy: 47.665 
+Validation Epoch: 3/30, Loss: 0.308, Accuracy: 40.900 
+Testing Epoch: 3/30, Accuracy: 41.907 
+Training Epoch: 3/30, Loss: 0.275, Accuracy: 48.040 
+Validation Epoch: 3/30, Loss: 0.306, Accuracy: 41.336 
+Testing Epoch: 3/30, Accuracy: 41.914 
+Training Epoch: 4/30, Loss: 0.256, Accuracy: 52.455 
+Validation Epoch: 4/30, Loss: 0.303, Accuracy: 43.386 
+Testing Epoch: 4/30, Accuracy: 44.036 
+Training Epoch: 5/30, Loss: 0.240, Accuracy: 56.590 
+Validation Epoch: 5/30, Loss: 0.318, Accuracy: 43.221 
+Testing Epoch: 5/30, Accuracy: 43.286 
+Training Epoch: 1/30, Loss: 0.338, Accuracy: 30.935 
+Validation Epoch: 1/30, Loss: 0.321, Accuracy: 35.007 
+Testing Epoch: 1/30, Accuracy: 35.050 
+Training Epoch: 1/30, Loss: 0.337, Accuracy: 30.725 
+Validation Epoch: 1/30, Loss: 0.328, Accuracy: 34.557 
+Training Epoch: 1/30, Loss: 0.339, Accuracy: 30.000 
+Testing Epoch: 1/30, Accuracy: 34.136 
+Validation Epoch: 1/30, Loss: 0.325, Accuracy: 34.657 
+Testing Epoch: 1/30, Accuracy: 34.229 
+Training Epoch: 2/30, Loss: 0.295, Accuracy: 42.290 
+Validation Epoch: 2/30, Loss: 0.308, Accuracy: 41.143 
+Testing Epoch: 2/30, Accuracy: 40.564 

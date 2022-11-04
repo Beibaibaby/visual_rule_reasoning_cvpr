@@ -1,0 +1,11 @@
+Training Epoch: 1/30, Loss: 0.553, Accuracy: 14.000 
+Validation Epoch: 1/30, Loss: 0.686, Accuracy: 18.350 
+Testing Epoch: 1/30, Accuracy: 18.393 
+Training Epoch: 2/30, Loss: 0.395, Accuracy: 17.000 
+Validation Epoch: 2/30, Loss: 0.395, Accuracy: 19.064 
+Testing Epoch: 2/30, Accuracy: 19.100 
+Training Epoch: 3/30, Loss: 0.391, Accuracy: 19.000 
+Validation Epoch: 3/30, Loss: 0.386, Accuracy: 18.900 
+Testing Epoch: 3/30, Accuracy: 18.871 
+Training Epoch: 4/30, Loss: 0.403, Accuracy: 18.000 
+Validation Epoch: 4/30, Loss: 0.387, Accuracy: 19.829 
