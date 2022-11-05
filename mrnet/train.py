@@ -7,13 +7,14 @@ import numpy as np
 import torch
 
 parser = argparse.ArgumentParser(description='baseline')
+parser.add_argument('--gpu', type=str, default='0', choices=['0', '1','2','3'])
+parser.add_argument('--save_log_path', type=str, default='/localdisk2/draco/logs_mrnet')
 parser.add_argument('--testname', type=str, default=None)
 parser.add_argument('--debug', action='store_true')
-parser.add_argument('--dataset', type=str, default='RAVEN-FAIR')
+parser.add_argument('--dataset', type=str, default='RAVEN-F')
 parser.add_argument('--regime', type=str, default=None)
-#parser.add_argument('--path', type=str, default='/nfs/h1/userhome/zry-wcw/workingdir')
 
-parser.add_argument('--path', type=str, default='/Users/dragon/Desktop/ssl_raven/mrnet_mean_teacher')
+parser.add_argument('--path', type=str, default='/localdisk2/RAVEN')
 
 parser.add_argument('--subset', type=str, default=None)
 parser.add_argument('--ratio', type=float, default=None)
@@ -55,11 +56,14 @@ parser.add_argument('--multihead_w', type=float, default=1.)
 ### defined by ZK ###
 parser.add_argument('--big_flag', action='store_true', help='number of the features in the network, i.e., number of channels'
                                                        'big = 2 * non_big')
-parser.add_argument('--num_label_raven', type=int, default=42000,
+parser.add_argument('--num_label_raven', type=int, default=1000,
                         help='the number of labeled data in RAVEN dataset')
 parser.add_argument('--ema_loss_weight', type=float, default=1)
 parser.add_argument('--ema_decay', default=0.999, type=float, metavar='ALPHA',
                         help='ema variable decay rate (default: 0.999)')
+
+
+
 
 
 def check_paths(args):
@@ -81,6 +85,7 @@ def check_paths(args):
 
 def main(args):
     args.cuda = torch.cuda.is_available()
+    device = torch.device('cuda:'+args.gpu if torch.cuda.is_available() else 'cpu')
 
     if args.test:
         assert args.recovery
