@@ -13,7 +13,7 @@ parser.add_argument('--testname', type=str, default=None)
 parser.add_argument('--debug', action='store_true')
 parser.add_argument('--dataset', type=str, default='RAVEN-F')
 parser.add_argument('--regime', type=str, default=None)
-parser.add_argument('--ssl', type=str, default='mixmatch')
+parser.add_argument('--ssl', type=str, default='mean_teacher')
 parser.add_argument('--path', type=str, default='/localdisk2/RAVEN')
 
 parser.add_argument('--subset', type=str, default=None)
