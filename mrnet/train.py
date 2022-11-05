@@ -32,7 +32,7 @@ parser.add_argument('--no_rc', dest='row_col', action='store_false')
 parser.add_argument('--relu_bf', dest='relu_before_reduce', action='store_true')
 
 parser.add_argument('--epochs', type=int, default=-1)
-parser.add_argument('--device', type=int, default=0)
+parser.add_argument('--device', type=int, default='0',choices=[0, 1,2,3])
 
 parser.add_argument('--lr', type=float, default=1e-3)
 parser.add_argument('--beta1', type=float, default=0.9)

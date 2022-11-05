@@ -422,14 +422,14 @@ class Trainer:
             if self.use_meta:
                 print("{} - Avg Loss: {:.6f} META {:.6f}, Test  Avg Acc: {:.4f}".format(
                     subset, loss_avg / float(counter), loss_meta_avg / float(counter), acc_avg / float(counter)))
-                with open(os.path.join(self.save_path, self.args.ssl+'_num='+str(self.args.num_label_raven)+'_gpu='+self.args.ssl+'.txt'), "a") as f:
+                with open(os.path.join(self.save_path, self.args.ssl+'_num='+str(self.args.num_label_raven)+'_gpu='+str(self.args.device)+'_'+self.args.ssl+'.txt'), "a") as f:
                     print("{} - Avg Loss: {:.6f} META {:.6f}, Test  Avg Acc: {:.4f}".format(subset, loss_avg / float(counter), loss_meta_avg / float(counter), acc_avg / float(counter)),file=f)
                 f.close()
             else:
                 print("{} - Avg Loss: {:.6f}, Test  Avg Acc: {:.4f}".format(
                     subset, loss_avg / float(counter), acc_avg / float(counter)))
                 
-                with open(os.path.join(self.save_path, self.args.ssl+'_num='+str(self.args.num_label_raven)+'_gpu='+self.args.ssl+'.txt'), "a") as f:
+                with open(os.path.join(self.save_path, self.args.ssl+'_num='+str(self.args.num_label_raven)+'_gpu='+str(self.args.device)+'_'+self.args.ssl+'.txt'), "a") as f:
                     print("{} - Avg Loss: {:.6f}, Test  Avg Acc: {:.4f}".format(
                         subset, loss_avg / float(counter), acc_avg / float(counter)),file=f)
                 f.close()
@@ -503,7 +503,7 @@ class Trainer:
                         else:
                             print(f'{test_acc_regime[key]:}')
                            
-                with open(os.path.join(self.save_path, self.args.ssl+'_num='+str(self.args.num_label_raven)+'_gpu='+self.args.ssl+'.txt'), "a") as f:
+                with open(os.path.join(self.save_path, self.args.ssl+'_num='+str(self.args.num_label_raven)+'_gpu='+str(self.args.device)+'_'+self.args.ssl+'.txt'), "a") as f:
                     if val_acc_regime is not None:
                   
 
@@ -533,14 +533,14 @@ class Trainer:
                     print(f'Early stopping exit: {epoch - best_val_acc_epoch} > {self.args.early_stopping}')
                     break
                 print(f"Early stopping countdown: {epoch - best_val_acc_epoch}/{self.args.early_stopping} (Best VAL: {best_val_acc:0.5f}, Best VAL TEST: {best_val_test_acc:0.5f}, Best TEST: {best_test_acc:0.5f})")
-                with open(os.path.join(self.save_path, self.args.ssl+'_num='+str(self.args.num_label_raven)+'_gpu='+self.args.ssl+'.txt'), "a") as f:
+                with open(os.path.join(self.save_path, self.args.ssl+'_num='+str(self.args.num_label_raven)+'_gpu='+str(self.args.device)+'_'+self.args.ssl+'.txt'), "a") as f:
                     print(f"Early stopping countdown: {epoch - best_val_acc_epoch}/{self.args.early_stopping} (Best VAL: {best_val_acc:0.5f}, Best VAL TEST: {best_val_test_acc:0.5f}, Best TEST: {best_test_acc:0.5f})",file=f)                    
                 f.close()
         print('Done Training')
         print(f'Best Validation Accuracy: {best_val_acc}')
         print(f'Best Validation Test Accuracy: {best_val_test_acc}')
         print(f'Best Test Accuracy: {best_test_acc}')                
-        with open(os.path.join(self.save_path, self.args.ssl+'_num='+str(self.args.num_label_raven)+'_gpu='+self.args.ssl+'.txt'), "a") as f:
+        with open(os.path.join(self.save_path, self.args.ssl+'_num='+str(self.args.num_label_raven)+'_gpu='+str(self.args.device)+'_'+self.args.ssl+'.txt'), "a") as f:
             print('Done Training',file=f)
             print(f'Best Validation Accuracy: {best_val_acc}',file=f)
             print(f'Best Validation Test Accuracy: {best_val_test_acc}',file=f)
