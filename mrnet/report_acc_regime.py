@@ -4,6 +4,8 @@ import os
 def init_acc_regime(dataname):
     if 'RAVEN' in dataname:
         return init_acc_regime_raven()
+    elif 'raven' in dataname:
+        return init_acc_regime_raven()
     else:
         return init_acc_regime_pgm()
 
@@ -11,6 +13,8 @@ def init_acc_regime(dataname):
 def update_acc_regime(dataname, acc_regime, model_output, target, structure_encoded, data_file):
     if 'RAVEN' in dataname:
         update_acc_regime_raven(acc_regime, model_output, target, data_file)
+    elif 'raven' in dataname:
+         update_acc_regime_raven(acc_regime, model_output, target, data_file)       
     else:
         update_acc_regime_pgm(acc_regime, model_output, target, structure_encoded)
 

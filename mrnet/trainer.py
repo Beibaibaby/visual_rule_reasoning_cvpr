@@ -62,6 +62,7 @@ class Trainer:
 
         print('Loading datasets')
         from data.data_utils import get_data
+        print(self.args.dataset)
         self.trainloader = get_data(self.args.path, self.args.dataset, self.args.img_size,
                                     dataset_type="train", regime=self.args.regime, subset=self.args.subset,
                                     batch_size=self.args.batch_size, drop_last=True, num_workers=self.args.num_workers,

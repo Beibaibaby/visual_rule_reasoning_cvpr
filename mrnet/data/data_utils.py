@@ -34,6 +34,12 @@ def get_data(data_root, dataname, image_size,
                                dataset_type=dataset_type, subset=subset,
                                image_size=image_size, transform=None, flip=flip, permute=permute,
                                num_label_raven=num_label_raven, labeled=labeled)
+    if 'raven' in dataname:
+        from .raven_dataset import RAVENDataset
+        dataset = RAVENDataset(get_data_path(data_root, dataname), None,
+                               dataset_type=dataset_type, subset=subset,
+                               image_size=image_size, transform=None, flip=flip, permute=permute,
+                               num_label_raven=num_label_raven, labeled=labeled)
 
     # Reduce dataset to a smaller subset, nice for debugging
     if ratio is not None:
