@@ -19,7 +19,7 @@ parser.add_argument('--path', type=str, default='/localdisk2/RAVEN')
 parser.add_argument('--subset', type=str, default=None)
 parser.add_argument('--ratio', type=float, default=None)
 parser.add_argument('--batch_size', type=int, default=32)
-parser.add_argument('--num_workers', type=int, default=4)
+parser.add_argument('--num_workers', type=int, default=8)
 parser.add_argument('--img_size', type=int, default=80)
 
 parser.add_argument('--seed', type=int, default=12345)

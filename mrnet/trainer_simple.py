@@ -185,15 +185,13 @@ class Trainer:
             # unlabel data num > label data num
             list_image_unlabel=[]
             list_unlabel_output=[]
-            image_unlabel, _, _, _, _ = next(trainloader_unlabel_iter)
-            
+            image_unlabel_i, _, _, _, _ = next(trainloader_unlabel_iter)
+            image_unlabel_i = renormalize(image_unlabel_i)
             ### mean teacher ###
             image = renormalize(image)
-            
+   
             for i in range(self.args.num_argument):
-                image_unlabel, _, _, _, _ = next(trainloader_unlabel_iter)             
-                image_unlabel = renormalize(image_unlabel)
-                image_unlabel=strong_picture(image_unlabel)
+                image_unlabel=strong_picture(image_unlabel_i)
                 if self.args.cuda:
                     image_unlabel = image_unlabel.cuda()
                 list_image_unlabel.append(image_unlabel)
