@@ -59,7 +59,7 @@ parser.add_argument('--big_flag', action='store_true', help='number of the featu
 parser.add_argument('--num_label_raven', type=int, default=1000,
                         help='the number of labeled data in RAVEN dataset')
 parser.add_argument('--ema_loss_weight', type=float, default=1)
-parser.add_argument('--unlabel_loss_weight', type=float, default=0.1)
+parser.add_argument('--unlabel_loss_weight', type=float, default=0.3)
 parser.add_argument('--ema_decay', default=0.999, type=float, metavar='ALPHA',
                         help='ema variable decay rate (default: 0.999)')
 parser.add_argument('--num_argument', type=int, default=3,

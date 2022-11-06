@@ -9,8 +9,10 @@ from tqdm import tqdm
 import criteria
 from report_acc_regime import init_acc_regime, update_acc_regime
 
-### SSL ###
+from imgaug import augmenters as iaa
 from semi_sup import losses
+import random
+from torch.nn import functional as F
 
 torch.backends.cudnn.benchmark = True
 
@@ -20,6 +22,34 @@ ncols_const = 70
 def renormalize(images):
     return (images / 255 - 0.5) * 2
 
+seq = iaa.Sequential([
+iaa.Fliplr(1)
+])
+#Weak Picture Aug
+
+
+
+seq_strong = iaa.Sequential([
+    iaa.Cutout(nb_iterations=1,size=0.3333)
+])
+
+def data_auger(image_tensor):
+    image_tensor = image_tensor.numpy()
+    image_tensor = seq(images=image_tensor)
+    image_tensor = torch.tensor(image_tensor)
+    return image_tensor
+
+def data_auger_strong(image_tensor):
+    image_tensor = image_tensor.numpy()
+    image_tensor = seq_strong(images=image_tensor)
+    image_tensor = torch.tensor(image_tensor)
+    return image_tensor
+
+def weak_picture(image):
+    for i in range(image.shape[-4]):
+        if (random.uniform(0,1)>0.5):
+            image[i,:,:,:]= data_auger(image[i,:,:,:])
+    return image
 
 class Trainer:
     def __init__(self, args):
@@ -136,10 +166,10 @@ class Trainer:
             counter += 1
 
             image, target, meta_target, structure_encoded, data_file = batch_data
-
+            
             # unlabel data num > label data num
             list_image_unlabel=[]
-            
+            list_unlabel_output=[]
             image_unlabel, _, _, _, _ = next(trainloader_unlabel_iter)
             
             ### mean teacher ###
@@ -148,23 +178,42 @@ class Trainer:
             for i in range(self.args.num_argument):
                 image_unlabel, _, _, _, _ = next(trainloader_unlabel_iter)             
                 image_unlabel = renormalize(image_unlabel)
+                image_unlabel=weak_picture(image_unlabel)
+                if self.args.cuda:
+                    image_unlabel = image_unlabel.cuda()
                 list_image_unlabel.append(image_unlabel)
-
+                
+                stu_model_outputs = self.model(image_unlabel)
+                if i==0:
+                    sum=stu_model_outputs
+                else:
+                    sum+=stu_model_outputs
+                list_unlabel_output.append(stu_model_outputs)
+            
+            label_guessed=sum[0]/self.args.num_argument
+            unlabel_loss = 0
+            for stu_model_output in list_unlabel_output:
+                    unlabel_loss += F.mse_loss(label_guessed, stu_model_output[0])
+            unlabel_loss=unlabel_loss/self.args.num_argument
+            
+            stu_model_outputs=list_unlabel_output[0]
+            
             if self.args.cuda:
+                image=weak_picture(image)
                 image = image.cuda()
-                image_unlabel = image_unlabel.cuda()
+                #image_unlabel = image_unlabel.cuda()
                 target = target.cuda()
 
                 if self.use_meta:
                     meta_target = meta_target.cuda()
 
             model_outputs = self.model(image)
-            stu_model_outputs = self.model(image_unlabel)
+            
  
 
             if len(model_outputs) == 3:
                 model_output, meta_pred, model_output_heads = model_outputs
-                stu_model_output, _, _ = stu_model_outputs
+                #stu_model_output, _, _ = stu_model_outputs
     
             else:
                 model_output, meta_pred = model_outputs
@@ -172,7 +221,7 @@ class Trainer:
 
             label_loss = self.criterion(model_output, target)
 
-            loss = label_loss 
+            loss = label_loss  + self.args.unlabel_loss_weight*unlabel_loss
 
             loss_avg += loss.item()
             acc = criteria.calculate_acc(model_output, target)
