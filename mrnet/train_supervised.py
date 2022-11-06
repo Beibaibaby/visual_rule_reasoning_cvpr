@@ -1,0 +1,124 @@
+import argparse
+import os
+import sys
+import time
+
+import numpy as np
+import torch
+
+parser = argparse.ArgumentParser(description='baseline')
+parser.add_argument('--gpu', type=str, default='0', choices=['0', '1','2','3'])
+parser.add_argument('--save_log_path', type=str, default='/localdisk2/draco/logs_mrnet')
+parser.add_argument('--testname', type=str, default=None)
+parser.add_argument('--debug', action='store_true')
+parser.add_argument('--dataset', type=str, default='RAVEN-F')
+parser.add_argument('--regime', type=str, default=None)
+parser.add_argument('--ssl', type=str, default='supervised')
+parser.add_argument('--path', type=str, default='/localdisk2/RAVEN')
+
+parser.add_argument('--subset', type=str, default=None)
+parser.add_argument('--ratio', type=float, default=None)
+parser.add_argument('--batch_size', type=int, default=32)
+parser.add_argument('--num_workers', type=int, default=4)
+parser.add_argument('--img_size', type=int, default=80)
+
+parser.add_argument('--seed', type=int, default=12345)
+parser.add_argument('--model_name', type=str, default='mrnet')
+parser.add_argument('--r_func', type=str, default='dist')
+parser.add_argument('--contrast', dest='contrast', action='store_true')
+parser.add_argument('--levels', type=str, default='111')
+parser.add_argument('--dropout', dest='dropout', action='store_true')
+parser.add_argument('--no_rc', dest='row_col', action='store_false')
+parser.add_argument('--relu_bf', dest='relu_before_reduce', action='store_true')
+
+parser.add_argument('--epochs', type=int, default=-1)
+parser.add_argument('--device', type=int, default='0',choices=[0, 1,2,3])
+
+parser.add_argument('--lr', type=float, default=1e-3)
+parser.add_argument('--beta1', type=float, default=0.9)
+parser.add_argument('--beta2', type=float, default=0.999)
+parser.add_argument('--epsilon', type=float, default=1e-8)
+parser.add_argument('--wd', type=float, default=0)
+parser.add_argument('--use_tag', type=int, default=1)
+parser.add_argument('--meta_beta', type=float, default=0.)
+parser.add_argument('--early_stopping', type=int, default=5)
+parser.add_argument('--loss_func', type=str, default='contrast')
+parser.add_argument('--w_loss', dest='weighted_loss', action='store_true')
+parser.add_argument('--flip', dest='flip', action='store_true')
+parser.add_argument('--force_bias', dest='force_bias', action='store_true')
+
+parser.add_argument('--recovery', action='store_true')
+parser.add_argument('--test', action='store_true')
+parser.add_argument('--multihead', action='store_true')
+parser.add_argument('--multihead_mode', type=str, default=None)
+parser.add_argument('--multihead_w', type=float, default=1.)
+
+### defined by ZK ###
+parser.add_argument('--big_flag', action='store_true', help='number of the features in the network, i.e., number of channels'
+                                                       'big = 2 * non_big')
+parser.add_argument('--num_label_raven', type=int, default=1000,
+                        help='the number of labeled data in RAVEN dataset')
+parser.add_argument('--ema_loss_weight', type=float, default=1)
+parser.add_argument('--unlabel_loss_weight', type=float, default=1)
+parser.add_argument('--ema_decay', default=0.999, type=float, metavar='ALPHA',
+                        help='ema variable decay rate (default: 0.999)')
+
+
+
+
+def check_paths(args):
+    try:
+        if not os.path.exists(args.save_dir):
+            os.makedirs(args.save_dir)
+        if not os.path.exists(args.log_dir):
+            os.makedirs(args.log_dir)
+        new_log_dir = os.path.join(args.log_dir, time.ctime().replace(" ", "-"))
+        args.log_dir = new_log_dir
+        if not os.path.exists(args.log_dir):
+            os.makedirs(args.log_dir)
+        if not os.path.exists(args.checkpoint_dir):
+            os.makedirs(args.checkpoint_dir)
+    except OSError as e:
+        print(e)
+        sys.exit(1)
+
+
+def main(args):
+    args.cuda = torch.cuda.is_available()
+    device = torch.device('cuda:'+args.gpu if torch.cuda.is_available() else 'cpu')
+
+    if args.test:
+        assert args.recovery
+
+    if not args.recovery:
+        np.random.seed(args.seed)
+        torch.manual_seed(args.seed)
+        if args.cuda:
+            torch.cuda.manual_seed(args.seed)
+
+    from trainer_supervised import Trainer
+    trainer = Trainer(args)
+    if not args.test:
+        trainer.main()
+    else:
+        for subset in ['val', 'test']:
+            loss, acc, acc_regime = trainer.evaluate(subset)
+            print(f'{subset} loss: {loss} - accuracy: {acc}')
+            if acc_regime is not None:
+                print(f'{subset} In Regime:')
+                for key, val in acc_regime.items():
+                    if isinstance(val, float):
+                        print(f'{key}: {val:.3f}')
+                    else:
+                        print(f'{key}: {val}')
+
+
+if __name__ == "__main__":
+    args = parser.parse_args()
+
+    if args.testname is None:
+        args.testname = args.dataset
+
+    main(args)
+    print(f"script: {sys.argv[0]}")
+    print(f"args: {str(sys.argv)}")
