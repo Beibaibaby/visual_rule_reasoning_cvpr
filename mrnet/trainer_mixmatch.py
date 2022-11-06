@@ -63,7 +63,7 @@ class Trainer:
         if self.args.cuda:
             torch.cuda.manual_seed(self.args.seed)
 
-        test_path = os.path.join(self.args.save_log_path, 'results', self.args.testname)
+        test_path = os.path.join(self.args.save_log_path, 'results',self.args.ssl, self.args.testname)
         self.save_path = os.path.join(test_path, 'save')
         self.log_path = os.path.join(test_path, 'log')
 
