@@ -11,11 +11,12 @@ from datetime import datetime
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 from torch.autograd import Variable
-
+import random
 from dataset_utility import dataset, ToTensor
 from dcnet import DCNet
 from skimage.util import random_noise
 import pdb
+import gc
 
 visual=False
 label_aug=True
@@ -178,7 +179,8 @@ def train(epoch):
     #train_unlabel_loader_iter_2 = iter(train_unlabel_loader_2)
     for batch_idx in trange(len(train_loader_iter), ncols=ncols_const):
         
-            
+        #report=torch.cuda.memory_summary()
+        #print(report)  
 
         counter += 1
 
@@ -198,12 +200,14 @@ def train(epoch):
         encoded_unlabelled = activation['res1']
         
         
+        if epoch ==1: 
+            if random.uniform(0, 1)<1/4:    
+               first_row=encoded_unlabelled[0]
+               second_row=encoded_unlabelled[1]
+               stack.append(first_row)
+               stack.append(second_row)
         
-        for in_batch_iter in range(args.batch_size):
-            first_row=encoded_unlabelled[in_batch_iter*10]
-            second_row=encoded_unlabelled[in_batch_iter*10+1]
-            stack.append(first_row)
-            stack.append(second_row)    
+        #print(len(stack))  
         ###########Add Strong Rule
         for ii in range(args.k_aug):
             for i in range(image.shape[-4]):
@@ -317,6 +321,7 @@ def train(epoch):
         
         encoded_labelled = activation['res1']
         
+        del encoded_labelled
         pred = torch.max(predict, 1)[1]
         correct = pred.eq(target.data).cpu().sum().numpy()      
         
@@ -339,6 +344,13 @@ def train(epoch):
     f.write('Training Epoch: {:d}/{:d}, Loss: {:.3f}, Accuracy: {:.3f} \n'.format(
                 epoch, args.epochs, np.mean(metrics['loss']), accuracy))
     f.close()
+    del encoded_unlabelled
+    del image_unlabel
+    del image
+    del image_unlabel_for_c
+    gc.collect()
+    torch.cuda.empty_cache()
+    
             
     return metrics
 
