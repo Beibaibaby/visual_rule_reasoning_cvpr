@@ -1,3 +1,4 @@
+#!/bin/bash
 nohup python train_super.py --gpu 0 --num_label_raven 3000 &
 nohup python train_super.py --gpu 1 --num_label_raven 3000 &
 nohup python train_super.py --gpu 2 --num_label_raven 3000 &
