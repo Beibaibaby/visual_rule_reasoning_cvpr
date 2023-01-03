@@ -201,12 +201,40 @@ def train(epoch):
         
         
         if epoch ==1: 
-            if random.uniform(0, 1)<1/4:    
+            if random.uniform(0, 1)<1/5:    
                first_row=encoded_unlabelled[0]
                second_row=encoded_unlabelled[1]
                stack.append(first_row)
                stack.append(second_row)
         
+        
+        image_for_select = Variable(image, requires_grad=True).to(device)
+        #target = Variable(target, requires_grad=False).to(device)
+        
+        if epoch>1:
+            predict_for_select = model(image_for_select)
+            encoded_select = activation['res1']
+            print(encoded_select.shape)
+            pdist = torch.nn.PairwiseDistance(p=2)
+            pair_index_list=[]
+            for i in range(args.batch_size):
+                scan_list=[]
+                for candidate in stack:
+                    scan_list.append(torch.mean(pdist(encoded_select[10*i], candidate)))
+                    scan_list.append(torch.mean(pdist(encoded_select[10*i+1],candidate)))
+                scan_list_array=torch.stack((scan_list))
+                index_instance=torch.argmin(scan_list_array)
+                pair_index_list.append(index_instance)
+            
+            unlabel_replace_index_list=[]
+            for index in pair_index_list:
+                number=int( index.item() / 2)
+                
+                   
+
+        
+                  
+                
         #print(len(stack))  
         ###########Add Strong Rule
         for ii in range(args.k_aug):
@@ -275,10 +303,7 @@ def train(epoch):
 
                 
                 
-            #print('unlablled')
-            #print(activation['res1'][0])
-            # list_output_unlabel.append(stu_model_output)
-            
+  
             if ii == 0:
                 sum = stu_model_output
             else:
@@ -306,16 +331,10 @@ def train(epoch):
         target = Variable(target, requires_grad=False).to(device)
         
         predict = model(image)
-
-        #stu_model_output = model(image_unlabel)
-        #stu_model_output_2 = model(image_unlabel_2)
-        #stu_model_output= (stu_model_output+stu_model_output_2)/2
-        #ema_model_output = ema_model(image_unlabel)
-
+        
 
         label_loss = contrast_loss(predict, target)
 
-        #unlabel_loss = F.mse_loss(guass_label, ema_model_output)
 
         loss = label_loss + args.ema_loss_weight * unlabel_loss
         
