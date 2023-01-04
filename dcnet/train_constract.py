@@ -165,7 +165,8 @@ def sharpening(label,T):
     return torch.pow(label,T)/np.sum(torch.pow(label,T))
 
 stack=[]
-
+hash_stack = {-1:'ssss',-2:'ssss'}
+counter=0
 def train(epoch):
     model.train()    
     ema_model.train()
@@ -206,7 +207,14 @@ def train(epoch):
                second_row=encoded_unlabelled[1]
                stack.append(first_row)
                stack.append(second_row)
-        
+               hash_stack[counter]=image_unlabel[0][0]
+               counter=counter+1
+               hash_stack[counter]=image_unlabel[0][1]
+               counter=counter+1
+               print(image_unlabel.shape)
+               #print(hash_stack)
+               #çprint(hash_stack)
+               #print(hash_stack[counter-1])
         
         image_for_select = Variable(image, requires_grad=True).to(device)
         #target = Variable(target, requires_grad=False).to(device)
@@ -217,6 +225,7 @@ def train(epoch):
             print(encoded_select.shape)
             pdist = torch.nn.PairwiseDistance(p=2)
             pair_index_list=[]
+            ins_list=[]
             for i in range(args.batch_size):
                 scan_list=[]
                 for candidate in stack:
@@ -224,11 +233,22 @@ def train(epoch):
                     scan_list.append(torch.mean(pdist(encoded_select[10*i+1],candidate)))
                 scan_list_array=torch.stack((scan_list))
                 index_instance=torch.argmin(scan_list_array)
+                replace_instance=torch.min(scan_list_array)
                 pair_index_list.append(index_instance)
-            
+                print(pair_index_list)
+                ins_list.append(replace_instance)
+                
             unlabel_replace_index_list=[]
-            for index in pair_index_list:
-                number=int( index.item() / 2)
+
+            image_aug=image
+            print(len(pair_index_list))    
+            print(pair_index_list)
+            for i in range(args.batch_size):
+                #if pair_index_list[i].item()%2 == 0:
+                print(pair_index_list[i].item())
+                image_aug[i][0] = hash_stack[pair_index_list[i].item()]
+                #else:
+                #   image_aug[i][1] = hash_stack[pair_index_list[i].item()]
                 
                    
 
@@ -325,14 +345,14 @@ def train(epoch):
 
 
         image = Variable(image, requires_grad=True).to(device)
-
+        image_aug = Variable(image_aug, requires_grad=True).to(device)
         #image_unlabel_2 = Variable(image_unlabel_2, requires_grad=True).to(device)
 
         target = Variable(target, requires_grad=False).to(device)
         
         predict = model(image)
-        
-
+        predict_aug=model(image_aug)
+        contrastive_loss=contrast_loss(predict, predict_aug)
         label_loss = contrast_loss(predict, target)
 
 
